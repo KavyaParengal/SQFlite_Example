@@ -134,6 +134,7 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
             color: Colors.white,
             fontWeight: FontWeight.bold
         ),),
+        toolbarHeight: 65,
         backgroundColor: Colors.teal.shade900,
       ),
       body: isLoading ? Center(child: CircularProgressIndicator()) :ListView.builder(
@@ -143,7 +144,7 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: 90,
+                height: MediaQuery.of(context).size.height*.15,
                 decoration: BoxDecoration(
                     color: Colors.teal,
                     borderRadius: BorderRadius.circular(8),
@@ -161,21 +162,26 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(_datas[index]["title"],style: TextStyle(
-                              fontSize: 22,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600
-                          ),),
-                          SizedBox(height: 5,),
-                          Text(_datas[index]["description"],style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.grey.shade300,
-                              fontWeight: FontWeight.w400
-                          ),)
-                        ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(_datas[index]["title"],style: TextStyle(
+                                fontSize: 22,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600
+                            ),),
+                            SizedBox(height: 5,),
+                            Expanded(
+                              child: Text(_datas[index]["description"],style: TextStyle(
+                                  fontSize: 17,
+                                  color: Colors.grey.shade300,
+                                  fontWeight: FontWeight.w400,
+                              ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                       Row(
                         children: [
