@@ -58,13 +58,13 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
               children: [
                 TextFormField(
                   controller: titleController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Title', // Use labelText for labels
                   ),),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: descriptionController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Description', // Use labelText for labels
                   ),
                 ),
@@ -85,12 +85,12 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
 
                       Navigator.pop(context);
                     },
-                    child: Text(id==null?'Create New':'Update', style: TextStyle(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade900,fixedSize: const Size.fromHeight(50)),
+                    child: Text(id==null?'Create New':'Update', style: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       color: Colors.white,
                     ),),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade900,fixedSize: Size.fromHeight(50)),
                   ),
                 ),
               ],
@@ -124,12 +124,12 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
         onPressed: (){
           _showForm(null);
         },
-        child: Icon(Icons.add,size: 30,),
+        child: const Icon(Icons.add,size: 30,),
         backgroundColor: Colors.teal.shade900,
       ),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('SQL Helper',style: TextStyle(
+        title: const Text('SQL Helper',style: TextStyle(
             fontSize: 25,
             color: Colors.white,
             fontWeight: FontWeight.bold
@@ -137,7 +137,7 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
         toolbarHeight: 65,
         backgroundColor: Colors.teal.shade900,
       ),
-      body: isLoading ? Center(child: CircularProgressIndicator()) :ListView.builder(
+      body: isLoading ? const Center(child: CircularProgressIndicator()) :ListView.builder(
           itemCount: _datas.length,
           shrinkWrap: true,
           itemBuilder: (context,index){
@@ -151,7 +151,7 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
                     boxShadow: [
                       BoxShadow(
                           color: Colors.grey.shade400,
-                          offset: Offset(2, 3),
+                          offset: const Offset(2, 3),
                           blurRadius: 1,
                           spreadRadius: 2
                       )
@@ -166,12 +166,12 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(_datas[index]["title"],style: TextStyle(
+                            Text(_datas[index]["title"],style: const TextStyle(
                                 fontSize: 22,
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600
                             ),),
-                            SizedBox(height: 5,),
+                            const SizedBox(height: 5,),
                             Expanded(
                               child: Text(_datas[index]["description"],style: TextStyle(
                                   fontSize: 17,
@@ -226,13 +226,13 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
               children: [
                 TextFormField(
                   controller: titleController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Title', // Use labelText for labels
                   ),),
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: descriptionController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'Description', // Use labelText for labels
                   ),
                 ),
@@ -241,12 +241,12 @@ class _HomePage_SqfliteState extends State<HomePage_Sqflite> {
                   alignment: Alignment.bottomRight,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text('Create New', style: TextStyle(
+                    child: const Text('Create New', style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 18,
                       color: Colors.white,
                     ),),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade900,fixedSize: Size.fromHeight(50)),
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal.shade900,fixedSize: const Size.fromHeight(50)),
                   ),
                 ),
               ],
